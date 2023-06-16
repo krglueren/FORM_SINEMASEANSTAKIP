@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MOVIETICKETSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="belle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Saat" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="galaksi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Saat" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOVIETICKETS.dbo.hizliveofkeli' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="hizliveofkeli">
+          <Property Name="Id" Type="int" />
+          <Property Name="datetime" Type="datetime" />
+          <Property Name="clock" Type="nvarchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MOVIETICKETS.dbo.hzlvefkl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="hzlvefkl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datetimee" Type="date" />
+          <Property Name="clock" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Mstrlr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="10" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Saat" Type="nvarchar" MaxLength="10" />
+          <Property Name="Koltuk" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="musteriler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="10" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="10" />
+          <Property Name="Film" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Saat" Type="nvarchar" MaxLength="10" />
+          <Property Name="Koltuk" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="umut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Saat" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="MOVIETICKETSModelStoreContainer">
+          <EntitySet Name="belle" EntityType="Self.belle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="galaksi" EntityType="Self.galaksi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mstrlr" EntityType="Self.Mstrlr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="musteriler" EntityType="Self.musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="umut" EntityType="Self.umut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hzlvefkl" EntityType="Self.hzlvefkl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [hzlvefkl].[Id] AS [Id], 
+    [hzlvefkl].[datetimee] AS [datetimee], 
+    [hzlvefkl].[clock] AS [clock]
+    FROM [dbo].[hzlvefkl] AS [hzlvefkl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOVIETICKETSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="belle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Saat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="galaksi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Saat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mstrlr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Saat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Koltuk" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="musteriler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Film" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Saat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Koltuk" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="umut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Saat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hzlvefkl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datetimee" Type="DateTime" Precision="0" />
+          <Property Name="clock" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MOVIETICKETSEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="belle" EntityType="Self.belle" />
+          <EntitySet Name="galaksi" EntityType="Self.galaksi" />
+          <EntitySet Name="Mstrlr" EntityType="Self.Mstrlr" />
+          <EntitySet Name="musteriler" EntityType="Self.musteriler" />
+          <EntitySet Name="umut" EntityType="Self.umut" />
+          <EntitySet Name="hzlvefkl" EntityType="Self.hzlvefkl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MOVIETICKETSModelStoreContainer" CdmEntityContainer="MOVIETICKETSEntities1">
+          <EntitySetMapping Name="belle">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.belle">
+              <MappingFragment StoreEntitySet="belle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="galaksi">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.galaksi">
+              <MappingFragment StoreEntitySet="galaksi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mstrlr">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.Mstrlr">
+              <MappingFragment StoreEntitySet="Mstrlr">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Koltuk" ColumnName="Koltuk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musteriler">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.musteriler">
+              <MappingFragment StoreEntitySet="musteriler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Film" ColumnName="Film" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Koltuk" ColumnName="Koltuk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="umut">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.umut">
+              <MappingFragment StoreEntitySet="umut">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hzlvefkl">
+            <EntityTypeMapping TypeName="MOVIETICKETSModel.hzlvefkl">
+              <MappingFragment StoreEntitySet="hzlvefkl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="datetimee" ColumnName="datetimee" />
+                <ScalarProperty Name="clock" ColumnName="clock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
